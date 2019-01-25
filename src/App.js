@@ -1,26 +1,82 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Tabs, { TabPane } from "rc-tabs";
+import TabContent from "rc-tabs/lib/TabContent";
+import ScrollableInkTabBar from "rc-tabs/lib/ScrollableInkTabBar";
+import ReactList from "react-list";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+
+var data = [
+  {
+    name: "Badar"
+  },
+  {
+    name: "Badar"
+  },
+  {
+    name: "Badar"
+  },
+  {
+    name: "Badar"
+  },
+  {
+    name: "Badar"
+  },
+  {
+    name: "Badar"
+  },
+  {
+    name: "Badar"
+  },
+  {
+    name: "Badar"
+  },
+  {
+    name: "Badar"
+  },
+  {
+    name: "Badar"
+  },
+  {
+    name: "Badar"
+  },
+  {
+    name: "Badar"
+  },
+  {
+    name: "Badar"
+  },
+  {
+    name: "Badar"
+  },
+  {
+    name: "Badar"
+  }
+];
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
+    var items = data.map((item, index) => {
+      return (
+        <div key={index}>
+          <ListItem
+            style={{ background: "yellow", width: 140, height: 62, margin: 8 }}
           >
-            Learn React
-          </a>
-        </header>
-      </div>
+            <ListItemText
+              primary={item.name + " " + index}
+              secondary="Jan 9, 2014"
+            />
+          </ListItem>
+        </div>
+      );
+    });
+    return (
+      <List style={{ display: "flex", flexGrow: 1, flexDirection: "row" }}>
+        {items}
+      </List>
     );
   }
 }
