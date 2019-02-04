@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.9.0",
+    "moment": "^2.24.0",
     "rc-tabs": "^9.6.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
